@@ -34,5 +34,5 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			else:
 				flip_card()
 				clicked = false
-				position = event.position
+				
 				print("well it works")
