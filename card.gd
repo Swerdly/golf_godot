@@ -25,8 +25,6 @@ var card_faces = [
 	preload("res://Assets/PNG-cards-1.3/king_of_spades2.png"),
 	preload("res://Assets/PNG-cards-1.3/king_of_spades2.png"), #TODO Get Red sprite
 	preload("res://Assets/PNG-cards-1.3/black_joker.png")
-	
-	
 ]
 var card_back = preload("res://Assets/PNG-cards-1.3/card back black.png")
 var card_front = preload("res://Assets/PNG-cards-1.3/card back black.png")
