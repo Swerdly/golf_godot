@@ -2,9 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://b2onupnrg2qmm" path="res://deck.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cfs75pcufqgp5" path="res://deck.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://8vq55b03su56" path="res://observer.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=1360001256]
 visible = false
 
-[node name="Deck" parent="." unique_id=2068314203 instance=ExtResource("1_0xm2m")]
+[node name="Deck" parent="." unique_id=2068314203 node_paths=PackedStringArray("observer") instance=ExtResource("1_0xm2m")]
 script = ExtResource("2_h2yge")
+observer = NodePath("../Observer")
+
+[node name="Observer" parent="." unique_id=2139741989 instance=ExtResource("3_h2yge")]

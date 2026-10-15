@@ -1,12 +1,15 @@
 extends Node
-
+class_name Card
 enum Side {FRONT, BACK}
 var current_side = Side.BACK
 enum CARD_TYPES {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, BKING, RKING, JOKER}
 
+signal left_clicked(card: Card) 
+signal right_clicked(card: Card)
+
+
 @export var card_types: CARD_TYPES
 var card_type = CARD_TYPES.ACE
-
 var clicked = false
 var face
 var card_faces = [
@@ -27,7 +30,7 @@ var card_faces = [
 	preload("res://Assets/PNG-cards-1.3/black_joker.png")
 ]
 var card_back = preload("res://Assets/PNG-cards-1.3/card back black.png")
-var card_front = preload("res://Assets/PNG-cards-1.3/card back black.png")
+var card_front = preload("res://Assets/PNG-cards-1.3/jack_of_hearts2.png")
 
 func set_card(card:CARD_TYPES):
 	
@@ -86,6 +89,7 @@ func flip_card():
 func _on_card_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if clicked == false:
+				left_clicked.emit(self)
 				flip_card()
 				print("well it works")
 				
